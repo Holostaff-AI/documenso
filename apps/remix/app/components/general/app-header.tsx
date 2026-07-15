@@ -1,4 +1,5 @@
 import { useSession } from '@documenso/lib/client-only/providers/session';
+import { isAdmin } from '@documenso/lib/utils/is-admin';
 import { isPersonalLayout } from '@documenso/lib/utils/organisations';
 import { getRootHref } from '@documenso/lib/utils/params';
 import { trpc } from '@documenso/trpc/react';
@@ -11,6 +12,7 @@ import { Link, useParams } from 'react-router';
 
 import { BrandingLogo } from '~/components/general/branding-logo';
 
+import { AdminCommandPrompt } from './admin-command-prompt';
 import { AppCommandMenu } from './app-command-menu';
 import { AppNavDesktop } from './app-nav-desktop';
 import { AppNavMobile } from './app-nav-mobile';
@@ -22,7 +24,9 @@ export type HeaderProps = HTMLAttributes<HTMLDivElement>;
 export const Header = ({ className, ...props }: HeaderProps) => {
   const params = useParams();
 
-  const { organisations } = useSession();
+  const { organisations, user } = useSession();
+
+  const isUserAdmin = isAdmin(user);
 
   const [isCommandMenuOpen, setIsCommandMenuOpen] = useState(false);
   const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
@@ -89,7 +93,11 @@ export const Header = ({ className, ...props }: HeaderProps) => {
             <MenuIcon className="h-6 w-6 text-muted-foreground" />
           </button>
 
-          <AppCommandMenu open={isCommandMenuOpen} onOpenChange={setIsCommandMenuOpen} />
+          {isUserAdmin ? (
+            <AdminCommandPrompt open={isCommandMenuOpen} onOpenChange={setIsCommandMenuOpen} />
+          ) : (
+            <AppCommandMenu open={isCommandMenuOpen} onOpenChange={setIsCommandMenuOpen} />
+          )}
 
           <AppNavMobile isMenuOpen={isHamburgerMenuOpen} onMenuOpenChange={setIsHamburgerMenuOpen} />
         </div>
