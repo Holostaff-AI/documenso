@@ -850,11 +850,11 @@ msgstr "0 gratis organisaties over"
 msgid "1 Free organisations left"
 msgstr "1 gratis organisatie over"
 
-#: apps/remix/app/components/forms/token.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "1 month"
 msgstr "1 maand"
 
-#: apps/remix/app/components/forms/token.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "12 months"
 msgstr "12 maanden"
 
@@ -870,7 +870,7 @@ msgstr "2FA-reset"
 msgid "2FA token"
 msgstr "2FA-token"
 
-#: apps/remix/app/components/forms/token.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "3 months"
 msgstr "3 maanden"
 
@@ -949,11 +949,11 @@ msgstr "5 documenten per maand"
 msgid "500 Internal Server Error"
 msgstr "500 Interne serverfout"
 
-#: apps/remix/app/components/forms/token.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "6 months"
 msgstr "6 maanden"
 
-#: apps/remix/app/components/forms/token.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "7 days"
 msgstr "7 dagen"
 
@@ -1008,6 +1008,10 @@ msgstr "Een lid heeft je organisatie {organisationName} verlaten"
 msgid "A member has left your organisation on Documenso"
 msgstr "Een lid heeft je organisatie op Documenso verlaten"
 
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
+msgid "A name to help you identify this token later."
+msgstr ""
+
 #: packages/lib/jobs/definitions/emails/send-organisation-member-joined-email.handler.ts
 msgid "A new member has joined your organisation"
 msgstr "Een nieuw lid is toegetreden tot je organisatie"
@@ -1015,10 +1019,6 @@ msgstr "Een nieuw lid is toegetreden tot je organisatie"
 #: packages/email/templates/organisation-join.tsx
 msgid "A new member has joined your organisation {organisationName}"
 msgstr "Een nieuw lid is toegetreden tot je organisatie {organisationName}"
-
-#: apps/remix/app/components/forms/token.tsx
-msgid "A new token was created successfully."
-msgstr "Er is succesvol een nieuw token aangemaakt."
 
 #: apps/remix/app/components/forms/forgot-password.tsx
 #: apps/remix/app/routes/_unauthenticated+/check-email.tsx
@@ -1215,6 +1215,7 @@ msgstr "Actie"
 #: apps/remix/app/routes/_authenticated+/admin+/unsealed-documents._index.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.email-domains.$id.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.email-domains.$id.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks._index.tsx
 msgid "Actions"
 msgstr "Acties"
@@ -1708,11 +1709,11 @@ msgstr "Er bestaat al een e-mailadres met dit adres."
 #: apps/remix/app/components/dialogs/admin-team-member-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/admin-user-create-dialog.tsx
 #: apps/remix/app/components/dialogs/organisation-email-create-dialog.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 #: apps/remix/app/components/forms/avatar-image.tsx
 #: apps/remix/app/components/forms/password.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
 #: apps/remix/app/components/forms/signup.tsx
-#: apps/remix/app/components/forms/token.tsx
 #: apps/remix/app/components/general/claim-account.tsx
 #: apps/remix/app/components/general/document-signing/access-auth-2fa-form.tsx
 #: apps/remix/app/components/general/document-signing/access-auth-2fa-form.tsx
@@ -2120,10 +2121,6 @@ msgstr "Weet u zeker dat u het volgende transport wilt verwijderen?"
 #: apps/remix/app/components/dialogs/folder-delete-dialog.tsx
 msgid "Are you sure you want to delete this folder?"
 msgstr "Weet je zeker dat je deze map wilt verwijderen?"
-
-#: apps/remix/app/components/dialogs/token-delete-dialog.tsx
-msgid "Are you sure you want to delete this token?"
-msgstr "Weet je zeker dat je dit token wilt verwijderen?"
 
 #: apps/remix/app/components/general/document-signing/document-signing-reject-dialog.tsx
 msgid "Are you sure you want to reject this document? This action cannot be undone."
@@ -2607,6 +2604,7 @@ msgstr "Kunt u niemand vinden?"
 #: apps/remix/app/components/dialogs/team-member-update-dialog.tsx
 #: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
 #: apps/remix/app/components/dialogs/template-direct-link-dialog.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 #: apps/remix/app/components/dialogs/token-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/webhook-create-dialog.tsx
 #: apps/remix/app/components/dialogs/webhook-delete-dialog.tsx
@@ -2795,10 +2793,6 @@ msgstr "Verificatiemethode kiezen"
 #: apps/remix/app/components/general/document-signing/document-signing-auth-dialog.tsx
 msgid "Choose your preferred authentication method:"
 msgstr "Kies je voorkeursauthenticatiemethode:"
-
-#: apps/remix/app/components/forms/token.tsx
-msgid "Choose..."
-msgstr "Kiezen..."
 
 #: apps/remix/app/components/tables/admin-organisation-stats-table.tsx
 msgid "Claim"
@@ -3264,13 +3258,13 @@ msgstr "Ondertekeningslinks kopiëren"
 msgid "Copy team ID"
 msgstr "Team-ID kopiëren"
 
-#: apps/remix/app/components/forms/token.tsx
-msgid "Copy token"
-msgstr "Token kopiëren"
-
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains.$id.tsx
 msgid "Copy Value"
 msgstr "Waarde kopiëren"
+
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
+msgid "Copy your token now. For security reasons you will not be able to see it again."
+msgstr ""
 
 #: apps/remix/app/components/general/organisation-usage-reset-button.tsx
 msgid "Counter reset."
@@ -3338,9 +3332,17 @@ msgstr "Maak een organisatie aan om met teams samen te werken"
 msgid "Create an organisation to get started."
 msgstr "Maak een organisatie aan om te beginnen."
 
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
+msgid "Create and manage API tokens. See our <0>documentation</0> for more information."
+msgstr ""
+
 #: apps/remix/app/components/dialogs/template-use-dialog.tsx
 msgid "Create and send"
 msgstr "Aanmaken en verzenden"
+
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
+msgid "Create API token"
+msgstr ""
 
 #: apps/remix/app/components/dialogs/template-use-dialog.tsx
 msgid "Create as draft"
@@ -3460,8 +3462,8 @@ msgstr "Sjabloon maken"
 msgid "Create the document as pending and ready to sign."
 msgstr "Maak het document aan als in behandeling en klaar om te ondertekenen."
 
-#: apps/remix/app/components/forms/token.tsx
-#: apps/remix/app/components/forms/token.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Create token"
 msgstr "Token aanmaken"
 
@@ -3507,6 +3509,7 @@ msgstr "Maak je account aan en begin met het gebruik van moderne documentenonder
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/unsealed-documents._index.tsx
 #: apps/remix/app/routes/_authenticated+/settings+/security.sessions.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks._index.tsx
 msgid "Created"
 msgstr "Aangemaakt"
@@ -3526,11 +3529,6 @@ msgstr "Aangemaakt door"
 #: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
 msgid "Created on"
 msgstr "Aangemaakt op"
-
-#. placeholder {0}: i18n.date(token.createdAt, DateTime.DATETIME_FULL)
-#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
-msgid "Created on {0}"
-msgstr "Aangemaakt op {0}"
 
 #: apps/remix/app/routes/embed+/v2+/authoring+/envelope.create._index.tsx
 msgid "Creating Document"
@@ -3768,6 +3766,7 @@ msgstr "verwijderen"
 #: apps/remix/app/components/dialogs/team-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/team-group-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/token-delete-dialog.tsx
+#: apps/remix/app/components/dialogs/token-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/webhook-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/webhook-delete-dialog.tsx
 #: apps/remix/app/components/general/document/document-page-view-dropdown.tsx
@@ -3908,6 +3907,10 @@ msgstr "Verwijder het document. Deze actie kan niet ongedaan worden gemaakt, ga 
 #: apps/remix/app/components/dialogs/admin-user-delete-dialog.tsx
 msgid "Delete the users account and all its contents. This action is irreversible and will cancel their subscription, so proceed with caution."
 msgstr "Verwijder de gebruikersaccount en alle bijbehorende inhoud. Deze actie kan niet ongedaan worden gemaakt en zal hun abonnement opzeggen, dus ga voorzichtig te werk."
+
+#: apps/remix/app/components/dialogs/token-delete-dialog.tsx
+msgid "Delete token"
+msgstr ""
 
 #: apps/remix/app/components/dialogs/webhook-delete-dialog.tsx
 msgid "Delete Webhook"
@@ -4650,6 +4653,10 @@ msgstr "Niet herhalen"
 #: apps/remix/app/components/dialogs/team-delete-dialog.tsx
 msgid "Don't transfer (Delete all documents)"
 msgstr "Niet overdragen (alle documenten verwijderen)"
+
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
+msgid "Done"
+msgstr ""
 
 #: apps/remix/app/components/forms/2fa/enable-authenticator-app-dialog.tsx
 #: apps/remix/app/components/forms/2fa/view-recovery-codes-dialog.tsx
@@ -5521,6 +5528,7 @@ msgstr "Vervaldatum"
 
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings._index.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
 msgid "Expired"
 msgstr "Verlopen"
 
@@ -5530,6 +5538,7 @@ msgid "Expired"
 msgstr "Verlopen"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
 msgid "Expires"
 msgstr "Verloopt"
 
@@ -5538,15 +5547,14 @@ msgstr "Verloopt"
 msgid "Expires {0}"
 msgstr "Verloopt op {0}"
 
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
+msgid "Expires in"
+msgstr ""
+
 #. placeholder {0}: DateTime.fromMillis(Math.max(millisecondsRemaining, 0)).toFormat('mm:ss')
 #: apps/remix/app/components/general/document-signing/access-auth-2fa-form.tsx
 msgid "Expires in {0}"
 msgstr "Verloopt over {0}"
-
-#. placeholder {0}: i18n.date(token.expires, DateTime.DATETIME_FULL)
-#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
-msgid "Expires on {0}"
-msgstr "Verloopt op {0}"
 
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 #: packages/ui/primitives/document-flow/add-settings.tsx
@@ -6242,10 +6250,6 @@ msgstr "Ik ben de eigenaar van dit document"
 #: apps/remix/app/routes/_unauthenticated+/o.$orgUrl.signin.tsx
 msgid "I understand that I am providing my credentials to a 3rd party service configured by this organisation"
 msgstr "Ik begrijp dat ik mijn inloggegevens verstrek aan een externe dienst die door deze organisatie is ingesteld"
-
-#: apps/remix/app/components/dialogs/token-delete-dialog.tsx
-msgid "I'm sure! Delete it"
-msgstr "Ik weet het zeker! Verwijder het"
 
 #: apps/remix/app/components/tables/admin-claims-table.tsx
 #: apps/remix/app/components/tables/admin-dashboard-users-table.tsx
@@ -7267,6 +7271,7 @@ msgstr "n.v.t."
 #: apps/remix/app/components/dialogs/team-email-add-dialog.tsx
 #: apps/remix/app/components/dialogs/team-email-update-dialog.tsx
 #: apps/remix/app/components/dialogs/template-use-dialog.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 #: apps/remix/app/components/embed/authoring/configure-document-recipients.tsx
 #: apps/remix/app/components/embed/authoring/configure-document-recipients.tsx
 #: apps/remix/app/components/forms/email-transport-form.tsx
@@ -7287,6 +7292,7 @@ msgstr "n.v.t."
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains.$id.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/users.$id.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.email-domains.$id.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
 #: packages/lib/utils/fields.ts
 #: packages/ui/primitives/document-flow/add-fields.tsx
 #: packages/ui/primitives/document-flow/add-signers.tsx
@@ -7326,13 +7332,11 @@ msgstr "Moet ondertekenen"
 msgid "Needs to view"
 msgstr "Moet bekijken"
 
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 #: apps/remix/app/components/tables/settings-security-passkey-table.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
 msgid "Never"
 msgstr "Nooit"
-
-#: apps/remix/app/components/forms/token.tsx
-msgid "Never expire"
-msgstr "Nooit verlopen"
 
 #: packages/ui/components/document/expiration-period-picker.tsx
 msgid "Never expires"
@@ -7668,10 +7672,6 @@ msgstr "Aan"
 #: apps/remix/app/components/dialogs/webhook-create-dialog.tsx
 msgid "On this page, you can create a new webhook."
 msgstr "Op deze pagina kun je een nieuwe webhook aanmaken."
-
-#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
-msgid "On this page, you can create and manage API tokens. See our <0>Documentation</0> for more information."
-msgstr "Op deze pagina kun je API-tokens aanmaken en beheren. Zie onze <0>documentatie</0> voor meer informatie."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks._index.tsx
 msgid "On this page, you can create new Webhooks and manage the existing ones."
@@ -8326,10 +8326,6 @@ msgstr "Neem contact op met de site-eigenaar voor verdere hulp."
 #: apps/remix/app/components/general/document-signing/csc-recipient-signing-in-progress-page.tsx
 msgid "Please don't close this tab. The signing provider is finalising your signature."
 msgstr "Sluit dit tabblad niet. De ondertekenprovider rondt uw handtekening af."
-
-#: apps/remix/app/components/forms/token.tsx
-msgid "Please enter a meaningful name for your token. This will help you identify it later."
-msgstr "Voer een betekenisvolle naam in voor je token. Hiermee kun je het later herkennen."
 
 #: apps/remix/app/components/dialogs/sign-field-number-dialog.tsx
 msgid "Please enter a number"
@@ -10384,7 +10380,7 @@ msgstr "Er is iets misgegaan!"
 msgid "Something went wrong."
 msgstr "Er is iets misgegaan."
 
-#: apps/remix/app/components/forms/token.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Something went wrong. Please try again later."
 msgstr "Er is iets misgegaan. Probeer het later opnieuw."
 
@@ -11434,10 +11430,6 @@ msgstr "De testwebhook is succesvol naar je endpoint verzonden."
 msgid "The token is invalid or has expired."
 msgstr "De token is ongeldig of is verlopen."
 
-#: apps/remix/app/components/forms/token.tsx
-msgid "The token was copied to your clipboard."
-msgstr "Het token is naar je klembord gekopieerd."
-
 #: apps/remix/app/components/dialogs/token-delete-dialog.tsx
 msgid "The token was deleted successfully."
 msgstr "Het token is succesvol verwijderd."
@@ -12025,11 +12017,11 @@ msgstr "Schakel de schakelaar om je profiel voor het publiek zichtbaar te maken.
 msgid "Token"
 msgstr "Token"
 
-#: apps/remix/app/components/forms/token.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Token copied to clipboard"
 msgstr "Token gekopieerd naar klembord"
 
-#: apps/remix/app/components/forms/token.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Token created"
 msgstr "Token aangemaakt"
 
@@ -12037,21 +12029,9 @@ msgstr "Token aangemaakt"
 msgid "Token deleted"
 msgstr "Token verwijderd"
 
-#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
-msgid "Token doesn't have an expiration date"
-msgstr "Token heeft geen vervaldatum"
-
-#: apps/remix/app/components/forms/token.tsx
-msgid "Token expiration date"
-msgstr "Vervaldatum token"
-
 #: apps/remix/app/components/forms/reset-password.tsx
 msgid "Token has expired. Please try again."
 msgstr "Het token is verlopen. Probeer het opnieuw."
-
-#: apps/remix/app/components/forms/token.tsx
-msgid "Token name"
-msgstr "Tokennaam"
 
 #: apps/remix/app/routes/embed+/v2+/authoring+/_layout.tsx
 msgid "Token Not Found"
@@ -12209,10 +12189,6 @@ msgstr "De taal kan nu niet worden gewijzigd. Probeer het later opnieuw."
 #: apps/remix/app/components/forms/2fa/recovery-code-list.tsx
 msgid "Unable to copy recovery code"
 msgstr "Kan herstelcode niet kopiëren"
-
-#: apps/remix/app/components/forms/token.tsx
-msgid "Unable to copy token"
-msgstr "Kan token niet kopiëren"
 
 #: apps/remix/app/components/dialogs/template-direct-link-dialog.tsx
 msgid "Unable to create direct template access. Please try again later."
@@ -12631,6 +12607,10 @@ msgstr ""
 
 #: apps/remix/app/components/general/rate-limit-array-input.tsx
 msgid "Use a unique window for each rate limit"
+msgstr ""
+
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
+msgid "Use API tokens to authenticate with the Documenso API."
 msgstr ""
 
 #: apps/remix/app/components/forms/2fa/disable-authenticator-app-dialog.tsx
@@ -13273,10 +13253,6 @@ msgstr "We hebben een bevestigingsmail voor verificatie verzonden."
 #: apps/remix/app/components/forms/signup.tsx
 msgid "We need your signature to sign documents"
 msgstr "We hebben je handtekening nodig om documenten te ondertekenen."
-
-#: apps/remix/app/components/forms/token.tsx
-msgid "We were unable to copy the token to your clipboard. Please try again."
-msgstr "We konden het token niet naar je klembord kopiëren. Probeer het opnieuw."
 
 #: apps/remix/app/components/forms/2fa/recovery-code-list.tsx
 msgid "We were unable to copy your recovery code to your clipboard. Please try again."
@@ -13928,7 +13904,7 @@ msgstr "Je hebt een envelopitem verwijderd met de titel {0}"
 msgid "You deleted the document"
 msgstr "Je hebt het document verwijderd"
 
-#: apps/remix/app/components/forms/token.tsx
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "You do not have permission to create a token for this team."
 msgstr "Je hebt geen toestemming om een token voor dit team te maken."
 
@@ -13986,6 +13962,10 @@ msgstr "Je hebt de uitnodiging van <0>{0}</0> om lid te worden van hun organisat
 #: packages/lib/server-only/document/resend-document.ts
 msgid "You have initiated the document {0} that requires you to {recipientActionVerb} it."
 msgstr "Je hebt het document {0} gestart dat je moet {recipientActionVerb}."
+
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
+msgid "You have no API tokens yet. Your tokens will be shown here once you create them."
+msgstr ""
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks._index.tsx
 msgid "You have no webhooks yet. Your webhooks will be shown here once you create them."
@@ -14546,13 +14526,13 @@ msgstr "Uw envelop is succesvol verzonden."
 msgid "Your envelope has been resent successfully."
 msgstr "Uw envelop is succesvol opnieuw verzonden."
 
-#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
-msgid "Your existing tokens"
-msgstr "Je bestaande tokens"
-
 #: apps/remix/app/components/general/document-signing/document-signing-complete-dialog.tsx
 msgid "Your Name"
 msgstr "Uw naam"
+
+#: apps/remix/app/components/dialogs/token-create-dialog.tsx
+msgid "Your new API token"
+msgstr ""
 
 #: apps/remix/app/components/forms/password.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
@@ -14747,14 +14727,6 @@ msgstr "Je sjablonen zijn succesvol opgeslagen."
 #: apps/remix/app/routes/_unauthenticated+/verify-email.$token.tsx
 msgid "Your token has expired!"
 msgstr "Je token is verlopen!"
-
-#: apps/remix/app/components/forms/token.tsx
-msgid "Your token was created successfully! Make sure to copy it because you won't be able to see it again!"
-msgstr "Je token is succesvol aangemaakt! Zorg dat je het kopieert, want je kunt het later niet meer bekijken!"
-
-#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
-msgid "Your tokens will be shown here once you create them."
-msgstr "Je tokens worden hier weergegeven zodra je ze aanmaakt."
 
 #: packages/lib/server-only/2fa/email/send-2fa-token-email.ts
 msgid "Your two-factor authentication code"
