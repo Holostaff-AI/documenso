@@ -33,6 +33,7 @@ import { DocumentsTableSenderFilter } from '~/components/tables/documents-table-
 import { EnvelopesTableBulkActionBar } from '~/components/tables/envelopes-table-bulk-action-bar';
 import { useCurrentTeam } from '~/providers/team';
 import { appMetaTags } from '~/utils/meta';
+import { holostaff } from '@holostaff/sdk'
 
 export function meta() {
   return appMetaTags(msg`Documents`);
@@ -49,6 +50,13 @@ const ZSearchParamsSchema = ZFindDocumentsInternalRequestSchema.pick({
 });
 
 export default function DocumentsPage() {
+  // ── Holostaff instrumentation ──────────────────────────────────
+  // Added by the Holostaff deploy agent (Documenso · deploy v1).
+  // Marks the visitor entering the "adoption" journey stage when
+  // this entry page mounts — powers stage-aware copilot monitoring.
+  // Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+  useEffect(() => { holostaff.markStageEntry('adoption') }, []) // entry page for "Send a Document for Signing"
+
   const organisation = useCurrentOrganisation();
   const team = useCurrentTeam();
 

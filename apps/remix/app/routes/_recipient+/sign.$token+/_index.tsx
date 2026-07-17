@@ -51,6 +51,8 @@ import { useCspNonce } from '~/utils/nonce';
 import { superLoaderJson, useSuperLoaderData } from '~/utils/super-json-loader';
 
 import type { Route } from './+types/_index';
+import { holostaff } from '@holostaff/sdk'
+import { useEffect } from 'react'
 
 const handleV1Loader = async ({ params, request }: Route.LoaderArgs) => {
   const { requestMetadata } = getOptionalLoaderContext();
@@ -386,6 +388,13 @@ export async function loader(loaderArgs: Route.LoaderArgs) {
 }
 
 export default function SigningPage() {
+  // ── Holostaff instrumentation ──────────────────────────────────
+  // Added by the Holostaff deploy agent (Documenso · deploy v1).
+  // Marks the visitor entering the "adoption" journey stage when
+  // this entry page mounts — powers stage-aware copilot monitoring.
+  // Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+  useEffect(() => { holostaff.markStageEntry('adoption') }, []) // entry page for "Sign a Document as Recipient"
+
   const data = useSuperLoaderData<typeof loader>();
   const cspNonce = useCspNonce();
 
