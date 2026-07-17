@@ -1,3 +1,9 @@
+// TODO(holostaff): wire identify() into your sign-in completion path, and clearIdentity() into
+//   your sign-out path. Examples:
+//
+//     import { holostaff } from '@holostaff/sdk'
+//     holostaff.identify(user.id)
+//     holostaff.clearIdentity()
 import {
   IS_GOOGLE_SSO_ENABLED,
   IS_MICROSOFT_SSO_ENABLED,
