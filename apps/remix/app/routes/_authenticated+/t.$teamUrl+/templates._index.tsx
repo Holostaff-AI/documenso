@@ -12,7 +12,7 @@ import { Trans } from '@lingui/react/macro';
 import { EnvelopeType, OrganisationType } from '@prisma/client';
 import { Bird } from 'lucide-react';
 import { parseAsStringLiteral, useQueryState } from 'nuqs';
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'react-router';
 
 import { EnvelopesBulkDeleteDialog } from '~/components/dialogs/envelopes-bulk-delete-dialog';
@@ -23,6 +23,7 @@ import { EnvelopesTableBulkActionBar } from '~/components/tables/envelopes-table
 import { TemplatesTable } from '~/components/tables/templates-table';
 import { useCurrentTeam } from '~/providers/team';
 import { appMetaTags } from '~/utils/meta';
+import { holostaff } from '@holostaff/sdk'
 
 const TEMPLATE_VIEWS = ['team', 'organisation'] as const;
 
@@ -33,6 +34,13 @@ export function meta() {
 }
 
 export default function TemplatesPage() {
+  // ── Holostaff instrumentation ──────────────────────────────────
+  // Added by the Holostaff deploy agent (Documenso · deploy v1).
+  // Marks the visitor entering the "adoption" journey stage when
+  // this entry page mounts — powers stage-aware copilot monitoring.
+  // Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+  useEffect(() => { holostaff.markStageEntry('adoption') }, []) // entry page for "Create and Use a Template"
+
   const team = useCurrentTeam();
   const organisation = useCurrentOrganisation();
 
