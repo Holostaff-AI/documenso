@@ -7,7 +7,14 @@ import { StrictMode, startTransition, useEffect } from 'react';
 import { hydrateRoot } from 'react-dom/client';
 import { HydratedRouter } from 'react-router/dom';
 
+import { holostaff } from '@holostaff/sdk';
+
 import './utils/polyfills/promise-with-resolvers';
+
+holostaff.init({
+  tenantId: 'workspace_urZYaISXD2Pcx2jCgTE57vyYCQu2',
+  sourceId: 'ks_mrp2mc59_f1kkq8',
+});
 
 function PosthogInit() {
   const postHogConfig = extractPostHogConfig();
