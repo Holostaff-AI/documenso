@@ -1,0 +1,21 @@
+{
+  "holostaff": {
+    "version": 1,
+    "sourceId": "ks_mrp2mc59_f1kkq8",
+    "sourceName": "Documenso",
+    "artifactVersion": 1,
+    "editsKey": "8991353711a6e544c87632ae45bd8c73fffeba70",
+    "stageCopilots": {
+      "awareness": null,
+      "education": null,
+      "selection": null,
+      "mutual_commit": "rig-documenso-copilot",
+      "onboarding": "rig-documenso-copilot",
+      "adoption": "rig-documenso-copilot",
+      "expansion": "rig-documenso-copilot"
+    },
+    "deployId": "deploy_v1_2026-07-17T16-55",
+    "triggeredBy": "urZYaISXD2Pcx2jCgTE57vyYCQu2",
+    "triggeredAt": "2026-07-17T16:55:18.675Z"
+  }
+}
