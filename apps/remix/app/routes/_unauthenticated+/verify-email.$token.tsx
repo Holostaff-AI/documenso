@@ -1,3 +1,9 @@
+// TODO(holostaff): wire identify() into your sign-in completion path, and clearIdentity() into
+//   your sign-out path. Examples:
+//
+//     import { holostaff } from '@holostaff/sdk'
+//     holostaff.identify(user.id)
+//     holostaff.clearIdentity()
 import { authClient } from '@documenso/auth/client';
 import { useOptionalSession } from '@documenso/lib/client-only/providers/session';
 import { EMAIL_VERIFICATION_STATE } from '@documenso/lib/constants/email';
