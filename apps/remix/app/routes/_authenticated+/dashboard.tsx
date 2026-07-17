@@ -12,12 +12,13 @@ import { msg } from '@lingui/core/macro';
 import { Plural, Trans, useLingui } from '@lingui/react/macro';
 import { Building2Icon, InboxIcon, SettingsIcon, UsersIcon } from 'lucide-react';
 import { DateTime } from 'luxon';
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { Link, redirect } from 'react-router';
 
 import { OrganisationInvitations } from '~/components/general/organisations/organisation-invitations';
 import { InboxTable } from '~/components/tables/inbox-table';
 import { appMetaTags } from '~/utils/meta';
+import { holostaff } from '@holostaff/sdk'
 
 export function loader() {
   throw redirect('/');
@@ -28,6 +29,13 @@ export function meta() {
 }
 
 export default function DashboardPage() {
+  // ── Holostaff instrumentation ──────────────────────────────────
+  // Added by the Holostaff deploy agent (Documenso · deploy v1).
+  // Marks the visitor entering the "onboarding" journey stage when
+  // this entry page mounts — powers stage-aware copilot monitoring.
+  // Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+  useEffect(() => { holostaff.markStageEntry('onboarding') }, []) // entry page for "Organisation & Team Setup"
+
   const { t } = useLingui();
 
   const { user, organisations } = useSession();
