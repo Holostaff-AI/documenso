@@ -12,6 +12,8 @@ import { SignUpForm } from '~/components/forms/signup';
 import { appMetaTags } from '~/utils/meta';
 
 import type { Route } from './+types/signup';
+import { holostaff } from '@holostaff/sdk'
+import { useEffect } from 'react'
 
 export function meta() {
   return appMetaTags(msg`Sign Up`);
@@ -44,6 +46,13 @@ export function loader({ request }: Route.LoaderArgs) {
 }
 
 export default function SignUp({ loaderData }: Route.ComponentProps) {
+  // ── Holostaff instrumentation ──────────────────────────────────
+  // Added by the Holostaff deploy agent (Documenso · deploy v1).
+  // Marks the visitor entering the "mutual commit" journey stage when
+  // this entry page mounts — powers stage-aware copilot monitoring.
+  // Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+  useEffect(() => { holostaff.markStageEntry('mutual_commit') }, []) // entry page for "Sign Up"
+
   const {
     isEmailPasswordSignupEnabled,
     isGoogleSignupEnabled,
