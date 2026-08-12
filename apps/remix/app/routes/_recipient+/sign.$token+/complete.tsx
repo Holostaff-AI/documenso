@@ -30,6 +30,7 @@ import { RecipientBranding } from '~/components/general/recipient-branding';
 import { useCspNonce } from '~/utils/nonce';
 
 import type { Route } from './+types/complete';
+import { HolostaffStageMark } from '../../../holostaff-stage-mark'
 
 export async function loader({ params, request }: Route.LoaderArgs) {
   const { user } = await getOptionalSession(request);
@@ -102,7 +103,7 @@ export async function loader({ params, request }: Route.LoaderArgs) {
   };
 }
 
-export default function CompletedSigningPage({ loaderData }: Route.ComponentProps) {
+function CompletedSigningPage({ loaderData }: Route.ComponentProps) {
   const { _ } = useLingui();
 
   const { sessionData } = useOptionalSession();
@@ -299,4 +300,18 @@ export default function CompletedSigningPage({ loaderData }: Route.ComponentProp
       </div>
     </>
   );
+}
+
+// ── Holostaff instrumentation ──────────────────────────────────
+// Added by the Holostaff deploy agent (Documenso · deploy v2).
+// Marks the visitor entering the "mutual commit" journey stage when
+// this entry page mounts — powers stage-aware copilot monitoring.
+// Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+export default function HolostaffPage(props: any) {
+  return (
+    <>
+      <HolostaffStageMark stage="mutual_commit" /> {/* entry page for "Sign Up" */}
+      <CompletedSigningPage {...props} />
+    </>
+  )
 }
