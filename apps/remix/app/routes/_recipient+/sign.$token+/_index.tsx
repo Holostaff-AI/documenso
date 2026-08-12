@@ -53,6 +53,7 @@ import { superLoaderJson, useSuperLoaderData } from '~/utils/super-json-loader';
 import type { Route } from './+types/_index';
 import { holostaff } from '@holostaff/sdk'
 import { useEffect } from 'react'
+import { HolostaffStageMark } from '../../../holostaff-stage-mark'
 
 const handleV1Loader = async ({ params, request }: Route.LoaderArgs) => {
   const { requestMetadata } = getOptionalLoaderContext();
@@ -387,7 +388,7 @@ export async function loader(loaderArgs: Route.LoaderArgs) {
   } as const);
 }
 
-export default function SigningPage() {
+function SigningPage() {
   // ── Holostaff instrumentation ──────────────────────────────────
   // Added by the Holostaff deploy agent (Documenso · deploy v1).
   // Marks the visitor entering the "adoption" journey stage when
@@ -594,3 +595,17 @@ const SigningPageV2 = ({ data }: { data: Awaited<ReturnType<typeof handleV2Loade
     </EnvelopeSigningProvider>
   );
 };
+
+// ── Holostaff instrumentation ──────────────────────────────────
+// Added by the Holostaff deploy agent (Documenso · deploy v2).
+// Marks the visitor entering the "adoption" journey stage when
+// this entry page mounts — powers stage-aware copilot monitoring.
+// Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+export default function HolostaffPage(props: any) {
+  return (
+    <>
+      <HolostaffStageMark stage="adoption" /> {/* entry page for "Sign a Document (Recipient)" */}
+      <SigningPage {...props} />
+    </>
+  )
+}
