@@ -11,8 +11,9 @@ import { OrganisationMemberInviteDialog } from '~/components/dialogs/organisatio
 import { SettingsHeader } from '~/components/general/settings-header';
 import { OrganisationMemberInvitesTable } from '~/components/tables/organisation-member-invites-table';
 import { OrganisationMembersDataTable } from '~/components/tables/organisation-members-table';
+import { HolostaffStageMark } from '../../holostaff-stage-mark'
 
-export default function TeamsSettingsMembersPage() {
+function TeamsSettingsMembersPage() {
   const { _ } = useLingui();
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -83,4 +84,18 @@ export default function TeamsSettingsMembersPage() {
       </div>
     </div>
   );
+}
+
+// ── Holostaff instrumentation ──────────────────────────────────
+// Added by the Holostaff deploy agent (Documenso · deploy v2).
+// Marks the visitor entering the "expansion" journey stage when
+// this entry page mounts — powers stage-aware copilot monitoring.
+// Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+export default function HolostaffPage(props: any) {
+  return (
+    <>
+      <HolostaffStageMark stage="expansion" /> {/* entry page for "Invite Team Members" */}
+      <TeamsSettingsMembersPage {...props} />
+    </>
+  )
 }
