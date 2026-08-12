@@ -15,12 +15,13 @@ import { BillingPlans } from '~/components/general/billing-plans';
 import { OrganisationBillingPortalButton } from '~/components/general/organisations/organisation-billing-portal-button';
 import { OrganisationBillingInvoicesTable } from '~/components/tables/organisation-billing-invoices-table';
 import { appMetaTags } from '~/utils/meta';
+import { HolostaffStageMark } from '../../holostaff-stage-mark'
 
 export function meta() {
   return appMetaTags(msg`Billing`);
 }
 
-export default function TeamsSettingBillingPage() {
+function TeamsSettingBillingPage() {
   const { _, i18n } = useLingui();
 
   const organisation = useCurrentOrganisation();
@@ -187,4 +188,18 @@ export default function TeamsSettingBillingPage() {
       </section>
     </div>
   );
+}
+
+// ── Holostaff instrumentation ──────────────────────────────────
+// Added by the Holostaff deploy agent (Documenso · deploy v2).
+// Marks the visitor entering the "expansion" journey stage when
+// this entry page mounts — powers stage-aware copilot monitoring.
+// Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+export default function HolostaffPage(props: any) {
+  return (
+    <>
+      <HolostaffStageMark stage="expansion" /> {/* entry page for "Manage Organisation Billing" */}
+      <TeamsSettingBillingPage {...props} />
+    </>
+  )
 }
