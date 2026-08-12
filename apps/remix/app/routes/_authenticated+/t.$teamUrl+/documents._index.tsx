@@ -34,6 +34,7 @@ import { EnvelopesTableBulkActionBar } from '~/components/tables/envelopes-table
 import { useCurrentTeam } from '~/providers/team';
 import { appMetaTags } from '~/utils/meta';
 import { holostaff } from '@holostaff/sdk'
+import { HolostaffStageMark } from '../../../holostaff-stage-mark'
 
 export function meta() {
   return appMetaTags(msg`Documents`);
@@ -49,7 +50,7 @@ const ZSearchParamsSchema = ZFindDocumentsInternalRequestSchema.pick({
   senderIds: z.string().transform(parseToIntegerArray).optional().catch([]),
 });
 
-export default function DocumentsPage() {
+function DocumentsPage() {
   // ── Holostaff instrumentation ──────────────────────────────────
   // Added by the Holostaff deploy agent (Documenso · deploy v1).
   // Marks the visitor entering the "adoption" journey stage when
@@ -275,4 +276,18 @@ export default function DocumentsPage() {
       </div>
     </EnvelopeDropZoneWrapper>
   );
+}
+
+// ── Holostaff instrumentation ──────────────────────────────────
+// Added by the Holostaff deploy agent (Documenso · deploy v2).
+// Marks the visitor entering the "adoption" journey stage when
+// this entry page mounts — powers stage-aware copilot monitoring.
+// Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+export default function HolostaffPage(props: any) {
+  return (
+    <>
+      <HolostaffStageMark stage="adoption" /> {/* entry page for "Send Document for Signing" */}
+      <DocumentsPage {...props} />
+    </>
+  )
 }
