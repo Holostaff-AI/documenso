@@ -7,8 +7,9 @@ import { useLocation, useSearchParams } from 'react-router';
 import { TeamMemberCreateDialog } from '~/components/dialogs/team-member-create-dialog';
 import { SettingsHeader } from '~/components/general/settings-header';
 import { TeamMembersTable } from '~/components/tables/team-members-table';
+import { HolostaffStageMark } from '../../../holostaff-stage-mark'
 
-export default function TeamsSettingsMembersPage() {
+function TeamsSettingsMembersPage() {
   const { t } = useLingui();
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -54,4 +55,18 @@ export default function TeamsSettingsMembersPage() {
       <TeamMembersTable />
     </div>
   );
+}
+
+// ── Holostaff instrumentation ──────────────────────────────────
+// Added by the Holostaff deploy agent (Documenso · deploy v2).
+// Marks the visitor entering the "expansion" journey stage when
+// this entry page mounts — powers stage-aware copilot monitoring.
+// Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+export default function HolostaffPage(props: any) {
+  return (
+    <>
+      <HolostaffStageMark stage="expansion" /> {/* entry page for "Invite Team Members" */}
+      <TeamsSettingsMembersPage {...props} />
+    </>
+  )
 }
