@@ -6,12 +6,13 @@ import { UserBillingOrganisationsTable } from '~/components/tables/user-billing-
 import { appMetaTags } from '~/utils/meta';
 import { holostaff } from '@holostaff/sdk'
 import { useEffect } from 'react'
+import { HolostaffStageMark } from '../../../holostaff-stage-mark'
 
 export function meta() {
   return appMetaTags(msg`Billing`);
 }
 
-export default function SettingsBilling() {
+function SettingsBilling() {
   // ── Holostaff instrumentation ──────────────────────────────────
   // Added by the Holostaff deploy agent (Documenso · deploy v1).
   // Marks the visitor entering the "expansion" journey stage when
@@ -31,4 +32,18 @@ export default function SettingsBilling() {
       <UserBillingOrganisationsTable />
     </div>
   );
+}
+
+// ── Holostaff instrumentation ──────────────────────────────────
+// Added by the Holostaff deploy agent (Documenso · deploy v2).
+// Marks the visitor entering the "expansion" journey stage when
+// this entry page mounts — powers stage-aware copilot monitoring.
+// Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+export default function HolostaffPage(props: any) {
+  return (
+    <>
+      <HolostaffStageMark stage="expansion" /> {/* entry page for "Manage Organisation Billing" */}
+      <SettingsBilling {...props} />
+    </>
+  )
 }
