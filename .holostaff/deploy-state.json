@@ -1,21 +1,21 @@
 {
   "holostaff": {
     "version": 1,
-    "sourceId": "ks_mrp2mc59_f1kkq8",
+    "sourceId": "ks_msej1m5f_08yytu",
     "sourceName": "Documenso",
-    "artifactVersion": 1,
-    "editsKey": "8991353711a6e544c87632ae45bd8c73fffeba70",
+    "artifactVersion": 2,
+    "editsKey": "2670987d5f76ab9dbb3cfca2a2a6929e8f5083cc",
     "stageCopilots": {
       "awareness": null,
       "education": null,
       "selection": null,
-      "mutual_commit": "rig-documenso-copilot",
-      "onboarding": "rig-documenso-copilot",
-      "adoption": "rig-documenso-copilot",
-      "expansion": "rig-documenso-copilot"
+      "mutual_commit": null,
+      "onboarding": "documenso-nora",
+      "adoption": "documenso-nora",
+      "expansion": "documenso-nora"
     },
-    "deployId": "deploy_v1_2026-07-17T20-24",
-    "triggeredBy": "urZYaISXD2Pcx2jCgTE57vyYCQu2",
-    "triggeredAt": "2026-07-17T20:24:35.099Z"
+    "deployId": "deploy_v2_2026-08-12T23-36",
+    "triggeredBy": "xY8Ee8Lo7aZc09uYvTdo6yzNvWm1",
+    "triggeredAt": "2026-08-12T23:36:22.434Z"
   }
 }
