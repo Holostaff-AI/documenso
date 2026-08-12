@@ -30,6 +30,7 @@ import { appMetaTags } from '~/utils/meta';
 
 import type { Route } from './+types/signin';
 import { holostaff } from '@holostaff/sdk'
+import { HolostaffStageMark } from '../../holostaff-stage-mark'
 
 export function meta() {
   return appMetaTags(msg`Sign In`);
@@ -79,7 +80,7 @@ export async function loader({ request }: Route.LoaderArgs) {
   };
 }
 
-export default function SignIn({ loaderData }: Route.ComponentProps) {
+function SignIn({ loaderData }: Route.ComponentProps) {
   // ── Holostaff instrumentation ──────────────────────────────────
   // Added by the Holostaff deploy agent (Documenso · deploy v1).
   // Marks the visitor entering the "mutual commit" journey stage when
@@ -178,4 +179,18 @@ export default function SignIn({ loaderData }: Route.ComponentProps) {
       </div>
     </div>
   );
+}
+
+// ── Holostaff instrumentation ──────────────────────────────────
+// Added by the Holostaff deploy agent (Documenso · deploy v2).
+// Marks the visitor entering the "mutual commit" journey stage when
+// this entry page mounts — powers stage-aware copilot monitoring.
+// Safe to relocate; keep one call per entry page. https://docs.holostaff.ai
+export default function HolostaffPage(props: any) {
+  return (
+    <>
+      <HolostaffStageMark stage="mutual_commit" /> {/* entry page for "Sign Up" */}
+      <SignIn {...props} />
+    </>
+  )
 }
